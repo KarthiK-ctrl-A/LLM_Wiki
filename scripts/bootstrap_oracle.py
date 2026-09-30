@@ -54,9 +54,7 @@ exit
     template = template.replace("localhost:1521/FREEPDB1", f"localhost:1521/{args.pdb}")
     with args.env_file.open("x", encoding="utf-8") as stream:
         stream.write(template)
-    print(
-        "Dedicated Oracle user created; credentials saved only in the ignored .env file."
-    )
+    print("Dedicated Oracle user created; credentials saved only in the ignored .env file.")
 
 
 if __name__ == "__main__":

@@ -28,7 +28,9 @@ class NomicEmbeddingService:
             from sentence_transformers import SentenceTransformer
 
             self._model = SentenceTransformer(
-                self.model_name, revision=self.revision, trust_remote_code=True,
+                self.model_name,
+                revision=self.revision,
+                trust_remote_code=True,
                 model_kwargs={"code_revision": self.code_revision} if self.code_revision else None,
                 config_kwargs={"code_revision": self.code_revision} if self.code_revision else None,
             )

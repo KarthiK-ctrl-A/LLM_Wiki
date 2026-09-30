@@ -13,3 +13,6 @@ dist/
 data/
 llm_wiki_data/llm_wiki/data/
 *.part
+
+# Local operator runbook. It may contain machine-specific paths and commands.
+/LOCAL_COMMANDS.txt

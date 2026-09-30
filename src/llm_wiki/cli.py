@@ -30,11 +30,50 @@ def parser() -> argparse.ArgumentParser:
     smoke = commands.add_parser("smoke", help="Explicit live provider check")
     smoke.add_argument("provider", choices=["embeddings", "llm", "oracle", "graph"])
     smoke.add_argument("--report", type=Path, help="Save a credential-free verification report")
+    wiki = commands.add_parser("wiki", help="Create and inspect filesystem wiki projects")
+    wiki_commands = wiki.add_subparsers(dest="wiki_command", required=True)
+    create = wiki_commands.add_parser("create", help="Create a wiki project")
+    create.add_argument("name")
+    create.add_argument("--slug")
+    create.add_argument("--link-style", choices=["wikilink", "markdown"], default="wikilink")
+    create.add_argument(
+        "--extra-field",
+        action="append",
+        default=[],
+        help="Required project-specific frontmatter field; may be repeated",
+    )
+    listing = wiki_commands.add_parser("list", help="List wiki projects")
+    inspect = wiki_commands.add_parser("inspect", help="Inspect structure, pages, and links")
+    inspect.add_argument("project")
+    for command in (create, listing, inspect):
+        command.add_argument("--projects-dir", type=Path)
     return cli
 
 
 def execute(args: argparse.Namespace) -> int:
     settings = Settings.load(args.env_file)
+    if args.command == "wiki":
+        from llm_wiki.services.projects import ProjectService
+
+        projects_dir = args.projects_dir.resolve() if args.projects_dir else settings.projects_dir
+        service = ProjectService(projects_dir)
+        if args.wiki_command == "create":
+            config = service.create(
+                args.name,
+                slug=args.slug,
+                link_style=args.link_style,
+                extra_frontmatter_fields=tuple(args.extra_field),
+            )
+            result = {"created": True, "path": str(projects_dir / config.slug), **config.to_dict()}
+        elif args.wiki_command == "list":
+            result = {
+                "projects_root": str(projects_dir),
+                "projects": [project.to_dict() for project in service.list()],
+            }
+        else:
+            result = service.inspect(args.project)
+        print(json.dumps(result, indent=2))
+        return 0
     if args.command == "normalize":
         from llm_wiki.normalization import normalize_corpus
 

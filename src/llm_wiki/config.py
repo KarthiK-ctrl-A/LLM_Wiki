@@ -12,6 +12,7 @@ from urllib.parse import urlparse
 class Settings:
     corpus_manifest: Path
     corpus_dir: Path
+    projects_dir: Path = Path("data/wikis")
     domain: str = "property_casualty_insurance"
     http_timeout: float = 60
     download_delay: float = 1
@@ -63,6 +64,7 @@ class Settings:
             corpus_dir=path(
                 "WIKI_CORPUS_DIR", "llm_wiki_data/llm_wiki/data/sources/property_casualty_insurance"
             ),
+            projects_dir=path("WIKI_PROJECTS_DIR", "data/wikis"),
             domain=values.get("WIKI_DOMAIN", "property_casualty_insurance"),
             http_timeout=float(values.get("WIKI_HTTP_TIMEOUT", "60")),
             download_delay=float(values.get("WIKI_DOWNLOAD_DELAY", "1")),
