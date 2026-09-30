@@ -1,0 +1,44 @@
+{
+  "sources": 63,
+  "present": 59,
+  "file_counts": {
+    ".pdf": 42,
+    ".html": 17
+  },
+  "issues": [
+    {
+      "source_number": 22,
+      "issue": "missing"
+    },
+    {
+      "source_number": 23,
+      "issue": "missing"
+    },
+    {
+      "source_number": 25,
+      "issue": "extension_mismatch",
+      "path": "fema_nfip/25_nfip_claims_handbook_0480c0b9cf.pdf",
+      "detected_extension": ".html"
+    },
+    {
+      "source_number": 27,
+      "issue": "missing"
+    },
+    {
+      "source_number": 28,
+      "issue": "missing"
+    },
+    {
+      "source_number": 40,
+      "issue": "extension_mismatch",
+      "path": "triple_i/40_impact_of_increasing_inflation_on_personal_and_commercial_auto_liability_insurance_39f5a99117.pdf",
+      "detected_extension": ".html"
+    },
+    {
+      "source_number": 41,
+      "issue": "extension_mismatch",
+      "path": "triple_i/41_social_inflation_and_loss_development_8f548b51a8.pdf",
+      "detected_extension": ".html"
+    }
+  ]
+}

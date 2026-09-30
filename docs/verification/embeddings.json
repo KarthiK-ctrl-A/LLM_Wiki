@@ -1,0 +1,21 @@
+{
+  "provider": "embeddings",
+  "status": "passed",
+  "checked_at": "2026-09-30T03:20:35.564784+00:00",
+  "model": "nomic-ai/nomic-embed-text-v2-moe",
+  "revision": "1066b6599d099fbb93dfcb64f9c37a7c9e503e85",
+  "code_revision": "7710840340a098cfb869c4f65e87cf2b1b70caca",
+  "document_shape": [
+    2,
+    768
+  ],
+  "query_shape": [
+    768
+  ],
+  "cosine_scores": [
+    0.653586208820343,
+    0.14353041350841522
+  ],
+  "expected_document_ranked_first": true,
+  "sentence_transformers": "5.7.0"
+}

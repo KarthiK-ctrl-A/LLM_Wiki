@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pc-llm-wiki"
+version = "0.1.0"
+description = "Property and casualty insurance knowledge wiki foundations"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.32,<3", "python-dotenv>=1,<2"]
+
+[project.optional-dependencies]
+embeddings = ["sentence-transformers>=3,<6", "torch>=2,<3", "transformers>=4.41,<5", "einops>=0.8,<1"]
+agents = ["langchain>=1,<2", "langgraph>=1,<2", "langchain-ollama>=1,<2"]
+oracle = ["oracledb>=3,<4"]
+sources = ["pypdf>=6,<7", "beautifulsoup4>=4.13,<5", "fonttools>=4,<5"]
+dev = ["ruff>=0.11,<1"]
+
+[project.scripts]
+llm-wiki = "llm_wiki.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = [
+    "genai",
+    "llm_wiki_data/llm_wiki",
+    "llm_wiki_data/property_casualty_insurance_corpus_manifest.md",
+    "test.ipynb",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]

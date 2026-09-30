@@ -1,0 +1,9 @@
+{
+  "provider": "llm",
+  "status": "passed",
+  "checked_at": "2026-09-30T03:04:29.553498+00:00",
+  "model": "gemma4:latest",
+  "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+  "response": "I can respond.",
+  "langchain_ollama": "1.1.0"
+}

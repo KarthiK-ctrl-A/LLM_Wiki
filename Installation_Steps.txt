@@ -1,0 +1,8 @@
+Setup instructions have moved to README.md.
+
+Python 3.11+ is required. The old genai virtual environment referenced a missing
+Python 3.10 installation during the 2026-09-29 audit; use a new .venv instead.
+
+See manifest.md for implementation status and phased acceptance criteria.
+See .env.example for configuration; never put credentials in source files.
+See sqls/db_queries.sql for the manual development-user bootstrap only.

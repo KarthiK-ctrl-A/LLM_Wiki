@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "22": {
+      "decision": "exclude",
+      "note": "Historical HTTP 403; index/landing page, not required for the initial corpus. Retain manifest URL for later sourcing."
+    },
+    "23": {
+      "decision": "exclude",
+      "note": "Historical HTTP 403; manual directory excluded from initial corpus."
+    },
+    "27": {
+      "decision": "exclude",
+      "note": "Historical HTTP 403; archived manual landing page excluded from initial corpus."
+    },
+    "28": {
+      "decision": "exclude",
+      "note": "Historical HTTP 403; archive directory excluded from initial corpus."
+    },
+    "17": {
+      "decision": "exclude",
+      "note": "Report directory rather than a substantive report; reports 1-16 retained."
+    },
+    "18": {
+      "decision": "exclude",
+      "note": "Research publication catalog rather than source document."
+    },
+    "19": {
+      "decision": "exclude",
+      "note": "Login portal without substantive source text."
+    },
+    "26": {
+      "decision": "exclude",
+      "note": "Manual download directory; full NFIP manuals 21 and 24 retained."
+    },
+    "35": {
+      "decision": "exclude",
+      "note": "Image-only scan: zero extracted words across 12 pages. Excluded pending OCR; original retained."
+    },
+    "60": {
+      "decision": "exclude",
+      "note": "Publication directory rather than source document."
+    },
+    "61": {
+      "html_selector": "[id$='_Panel_NewContentHtml22']",
+      "decision": "accept",
+      "sha256": "389c2e4932beeef394df1e45047301b37b2258d7f3ed22442c09dba7b716be3e",
+      "normalized_sha256": "8a30a07bb2632b338b2d1e80de5a611b85122ca203586d26a63cd723107d9fa3",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "International; U.S.-focused explanation",
+      "effective_date": null
+    },
+    "62": {
+      "html_selector": "[id$='_Panel_NewContentHtml22']",
+      "decision": "accept",
+      "sha256": "7f08b611dbd49a36908ac62a9dc67eeeff3e983d12f4ac44b0f6f24a652df3de",
+      "normalized_sha256": "d10afa70ebbbba5603f1375eecde8fa5d2c27c72f05fa73e7ad33b3929ff98db",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "International; U.S.-focused explanation",
+      "effective_date": null
+    },
+    "25": {
+      "landing_url": "https://agents.floodsmart.gov/resource-library/en/nfip-claims-handbook",
+      "decision": "accept",
+      "sha256": "13ff0d9ce9e5f71cffb211ea889a8da4f346b355c0e5317ea24a77b4b7695859",
+      "normalized_sha256": "7fce406903ad3dc6ca0731d6742fc180df301a7f7d6f4a2d139b993f073e0e9d",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States (NFIP)",
+      "effective_date": null
+    },
+    "40": {
+      "landing_url": "https://www.iii.org/white-paper/impact-of-increasing-inflation-on-personal-and-commercial-auto-liability-insurance-092823",
+      "decision": "accept",
+      "sha256": "14c5a18884472eaf15a466e9f52b60c59f7433f13af6f9289c67197d12e0fc2e",
+      "normalized_sha256": "b4bdfe6628f75f5657e68f1c09e54fa4e27567e2d313dccb0aa3daa026fd0a68",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "41": {
+      "landing_url": "https://www.iii.org/white-paper/social-inflation-and-loss-development-020822",
+      "decision": "accept",
+      "sha256": "2cf550b638d0ca85274624ea429fbb18493d00411a4a33d4dafe00061f480086",
+      "normalized_sha256": "34fa9cbfbf596c901dc9221d5d098665775660592d2d7585917f96e7379c8e56",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "20": {
+      "decision": "exclude",
+      "note": "Model law directory; individual linked laws are not included. Excluded rather than treating the catalog as enacted law."
+    },
+    "1": {
+      "decision": "accept",
+      "sha256": "4bc7d690e9b8c6abbb26216da106f51d6178daebc43435e253d826a35d7fc94b",
+      "normalized_sha256": "89eac59f2196d49f7fc9819f326c8b4c026f65c89e03f6fa2f9b308ff734fa08",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "2": {
+      "decision": "accept",
+      "sha256": "f6d8c5db431bac6fae26902bac6c0d26ae4d093e6795733f23d71d7aaca6d2da",
+      "normalized_sha256": "5c659df69004f28b324efeeb378f66b2558e62f0e8f184b3404c0ca60a0ed324",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "3": {
+      "decision": "accept",
+      "sha256": "caedb81125510d6def609fe0fb3e929b981463514bf23147fe57bad0a3b9fabf",
+      "normalized_sha256": "0bda3eea034586b548f1a4e3d5e15c5a2f14b86a6d03f2d612936078ec8d1d27",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "4": {
+      "decision": "accept",
+      "sha256": "31db2aabc7ce74dbaf1d08d7056b9930c2922bfea6dba8026185e33ef2a5d5cb",
+      "normalized_sha256": "b85fedac58a1ed4c072f109f79a4e8d01f5b2fa7d9d77211e623beea5e0342b7",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "5": {
+      "decision": "accept",
+      "sha256": "7c468ce2d6e29ae9324d4714d9af508b35a1ae4806607ebb52d07cdb88877077",
+      "normalized_sha256": "7409549b4dbf01fbb00da689707c6a2a1e6ed833eebc21690949a05b88d14e0f",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "6": {
+      "decision": "accept",
+      "sha256": "ccddbd2abf6344fa13b00b0863804ac77b0a2a4c9ad07c2f031921d97980402f",
+      "normalized_sha256": "4a5127b670825412af957b670bb6b3e42c31b9deb0d90b054651dacb242a6b80",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "7": {
+      "decision": "accept",
+      "sha256": "34759655ce8e5387b48d523ebab89f9cd8f29d3f67c6d391838398b7d2659b78",
+      "normalized_sha256": "8eefe5de951257fc619892bb4f944802e8aa0a93bf7cbbabc7c8c58fd0c37ca2",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "8": {
+      "decision": "accept",
+      "sha256": "03d054bc6a6ac79c6605c6ba6b58acf9da8ddd6343b531238ef263edbb6d39e1",
+      "normalized_sha256": "ef27c71ab9a4351c8611fe41bb0beb5194aac35a1d0f6a1aaf3c23699f9762fd",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "9": {
+      "decision": "accept",
+      "sha256": "868c1323e510de3f439c7f92aee19aab3812162f5f76656f29d5c84f6d90c354",
+      "normalized_sha256": "ea44166fc75eaefb4856f00d80e996083fd36ccf927e329daef4b81ba6e7e26a",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "10": {
+      "decision": "accept",
+      "sha256": "369718e3f64767077c1639902d8a053c42b3110a2dd0c3cf802ca4658ca69858",
+      "normalized_sha256": "44424b735a1a2fcc644a999e3ac152df6d76187a665ba723582dca2de9d50946",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "11": {
+      "decision": "accept",
+      "sha256": "ee49fe995645920ec0a4b538d7f827b97d9a89516e69e72c95ee8003b23d1332",
+      "normalized_sha256": "61c84b47ec6e70f7e6b6d47542878321b8d5eda7199fa0b169766408f52223d7",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "12": {
+      "decision": "accept",
+      "sha256": "c8fb851ed76bda991114e317d69101a6552f020d76f32ed47e5d99ac99418552",
+      "normalized_sha256": "90975fdc515bea9349a04831013b865ae79d72c148ed0632b3228247486c5c8d",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "13": {
+      "decision": "accept",
+      "sha256": "2edeeb12d781fbed2ea4c80a2361e988730ec7d8de616262e5f90bb54ab3426e",
+      "normalized_sha256": "d03418985cdc14e329ec2c5eeacc3041ea94e43f952273bc9424e514370d7a79",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed. Historical 2012 handbook; sampled sparse page 357 is a section divider.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "14": {
+      "decision": "accept",
+      "sha256": "f40aef793773fb3338f7c7dadcc3d02a65ca4273f2dc940d9ad694ed626b0d6e",
+      "normalized_sha256": "5b18e50cb11082b2090c9e74e517c96c74d7d6038f3db7769175cee28bd53b2d",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed. Sampled page 1 is an image cover; substantive text begins on page 2.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "15": {
+      "decision": "accept",
+      "sha256": "038e4de712b7f5250c816f929f071f2905048c64117eeb62fd395f75809987e1",
+      "normalized_sha256": "4b2b9dc251c09374acdec0d5d0dc1551c8eeb682fd68f9fdbf88c34d10ef6fef",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Tabular text is retained; verify numeric cells against the original PDF before calculations.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "16": {
+      "decision": "accept",
+      "sha256": "f08b2b4d56b37c0710e1018c96edffc778a3f16fcad54290798fe8ba892fd2cc",
+      "normalized_sha256": "ac777e3237a647f307d1804c9a38f2ccd39bcef62be02a61cced7eab21d7b6eb",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "21": {
+      "decision": "accept",
+      "sha256": "da4c2c080aa96922d188c8dbc025953f7e44869e5f300cd03a64a21cc9efb34d",
+      "normalized_sha256": "df025527253ce70575f2ef60107b1fa59672e3c2f24d692b9fffde2b207ed273",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States (NFIP)",
+      "effective_date": null
+    },
+    "24": {
+      "decision": "accept",
+      "sha256": "29b38737548e77a65478de7a27e8e06db30db06012bb90e16d84aeadb64c59ca",
+      "normalized_sha256": "a583abd89b2aaf200d58c0b4df75e76e441984e589067ea9f325fcd865f80d23",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed. Sampled sparse page 17 is an illustrated section divider.",
+      "jurisdiction": "United States (NFIP)",
+      "effective_date": null
+    },
+    "29": {
+      "decision": "accept",
+      "sha256": "a886151c479680228e0ef5d6e82433b06398e74ff94478f7d4054e46be61fc31",
+      "normalized_sha256": "38f5ca70ba431aa674934896478217107ac86d06d16916a2ca81609853cd272c",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "30": {
+      "decision": "accept",
+      "sha256": "9c8fd25d28800854f36a0c550eaef34860aa3e3d47e6fbad6ec0fce1441106df",
+      "normalized_sha256": "3d7336e61370fbbdf0a1da8d8be52ae8f4e8d30f8af0bd8133ff8785b6cf635d",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "31": {
+      "decision": "accept",
+      "sha256": "cce5bf28027f9939854b6ed45d8718943502dfb2d6fd966a329bc360904408a3",
+      "normalized_sha256": "17618e7903e88f5b5e64e6c6d73d701fb884fc8d124501b84cc6af4135b1d319",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "32": {
+      "decision": "accept",
+      "sha256": "24e044f18edf2eedc8b18e3452bf81f9b52ecbbec2dc85e5ca5dc17a94c3fe9c",
+      "normalized_sha256": "a42a79b7c1bf428c4c6e698811fdf07ab6205f7f4348551accc07981e289e3f0",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sample HO 00 03 10 00 policy, copyright 1999; not a current issued policy.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "33": {
+      "decision": "accept",
+      "sha256": "ccc21f7663b91d130000ff0c9cc39ca327648456a6723caa118e0a15eb410a99",
+      "normalized_sha256": "9524644e99809421fa42067e6d201405f605bcd4d267d57349fc35d71fb53147",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "34": {
+      "decision": "accept",
+      "sha256": "e1b57f0dc957085ebb9b3f76e640cb9fedb998367c680903a15d43a4ac6b0ed5",
+      "normalized_sha256": "b93a60a3c0818f4b4d9dff8473d7f43bc9329a88009ff844c91b5b8a83cf2edc",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "36": {
+      "decision": "accept",
+      "sha256": "29559af3c77f2ea28fc3228b83648fd403a5e48430cadd40513ab253d0cca8cd",
+      "normalized_sha256": "bb8a92f775b84d9903f526561fb7a3637023d41190179bd67de69158b8345569",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "37": {
+      "decision": "accept",
+      "sha256": "3cf3c41fd070d812c2ddefac34d5fa8be6d2fe5a77d7b5df60f97be54b42d7df",
+      "normalized_sha256": "fe48496a7fae054ac703b8bcbde10a2ffe871685699724d66ec36953ed969c71",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "38": {
+      "decision": "accept",
+      "sha256": "cf52df90dac48857b0e87e6ed6e1baf41842fdd94033b5a6a1faa1a4da480db3",
+      "normalized_sha256": "d404061071586f5735b724c9b2b780b00546e8fd1005452e0fbc3dbe8f842ee6",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "39": {
+      "decision": "accept",
+      "sha256": "ed6160b740f6bce3edff8bfcab230eb8d72c27c7014f6dd668674ac4d40b730c",
+      "normalized_sha256": "3f290d1493947902b3110b97c181275b901c00c8c408b5b6f009e88f89fca9bc",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "42": {
+      "decision": "accept",
+      "sha256": "fe251a0f777740e9445371077ffa6103c3a7ff0c843df95c99c92c3ef9acd610",
+      "normalized_sha256": "9d015bfcbf32f684da680f42c58084510e3d025343930c7d412340badf046cdd",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "43": {
+      "decision": "accept",
+      "sha256": "53a050e44dee91691b18c21f03b0a7611a622bd008daae5758223dd5aed7bf0b",
+      "normalized_sha256": "13f17bcafac05b60ab68e78baf4d102495479d7715dd23fe71cac3ae2a0bf4ad",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "44": {
+      "decision": "accept",
+      "sha256": "91b4e08a94a7cc21df0c4bed28e032c68f323d977ab842f86b61a1ce9616dd08",
+      "normalized_sha256": "411885f69837c959304db301024ed09a803d1d9d8cdb988652cde99604d648e4",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "45": {
+      "decision": "accept",
+      "sha256": "563b937c71bb9dba23dc84c5109203737800c6dc72508f973fcfda8718215ea9",
+      "normalized_sha256": "ea00559ffc17d047ca5b469bd205759f55edbad85e3241fb7a1024115d3b6290",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "46": {
+      "decision": "accept",
+      "sha256": "54e3836c5552e0ee44a602f09993382c6367dc08a5fe5e379d28f5609d2ddd57",
+      "normalized_sha256": "6ffe90e0b760e0a06866642146931d1f9c9f86855c186d8842d3ac725c2f63ef",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "47": {
+      "decision": "accept",
+      "sha256": "3f226a1f884e6e94dc062441ba7e84815e9f8b63d03f8434561a65853d5e8a27",
+      "normalized_sha256": "f8362996e401a09ec3f683880d68f7afaa283674809c922780ed6d4c3b09334c",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Sparse-page warnings remain visible; cover/divider/image content may require original-page inspection. No OCR is claimed.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "48": {
+      "decision": "accept",
+      "sha256": "d76f03ae2d90e9d8a885c9cdbf730e0f15be2947eebdb839e87e14b48cbdb0e3",
+      "normalized_sha256": "6e71ab03b5514383f87118348af34ab1fc642759d3ff828caa4aefc75e064dfa",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "49": {
+      "decision": "accept",
+      "sha256": "914fa7502870f0b99403d0ef97de30edf92af99d9e348c21078e74ec0f804ecd",
+      "normalized_sha256": "f26810abf16aa732929b9265621d252fec6421c2ae0070594eac30e9b6707b4b",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "50": {
+      "decision": "accept",
+      "sha256": "2e707890729f56f083896bf51a47ca3eeb57f3d72da8708b63e06c5d948cb63f",
+      "normalized_sha256": "134ec97726c9acbab2b0dbfa3403be48fcbf892b6cae06b501f42f5f4ddbe32b",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit. Historical 2016 infographic; projections for 2020 must remain dated, not current facts.",
+      "jurisdiction": "United States",
+      "effective_date": null
+    },
+    "51": {
+      "decision": "accept",
+      "sha256": "67fc6dd8b02295279ca9f212dea624881a6baf41ecce5c4a029fbd8300203f5d",
+      "normalized_sha256": "d910eccfa9c9c04476c3d5f5672984c128139833b914a1ca810e4678e09e8750",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-CA",
+      "effective_date": null
+    },
+    "52": {
+      "decision": "accept",
+      "sha256": "fc763a89dbb693597c85499a5333975e34f01c61a6a2dc4c3798a562dd1f831c",
+      "normalized_sha256": "cb636c305b42b952c907d8195d5cea58348b02957aff3502f8200dd8a9e011c1",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-CA",
+      "effective_date": null
+    },
+    "53": {
+      "decision": "accept",
+      "sha256": "84d296b35760dff423661667acc833e649020a45a3beee4f1872ec0fa544bc36",
+      "normalized_sha256": "b692c738adf28ecf6141a0c77bce09d8d13cbdd127c082c7f38b01c22f57c19d",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-NC",
+      "effective_date": null
+    },
+    "54": {
+      "decision": "accept",
+      "sha256": "7009ef2d7009aa4399e6be9a0338dff79dfeb9e7184e78a9deb95e6bdce33c9d",
+      "normalized_sha256": "8c518b888f6e579b4835ee1403ec8100add159cfe657f1c2551d96866c2eb991",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-NC",
+      "effective_date": null
+    },
+    "55": {
+      "decision": "accept",
+      "sha256": "fadf41117b7e95eeb2e93886d1da1e6a02727b46f525077eabc2602b3566bbba",
+      "normalized_sha256": "6544cee303c370e52b74849e4657e26a5889d9ac7070ef66d4789d086be21e10",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-NC",
+      "effective_date": null
+    },
+    "56": {
+      "decision": "accept",
+      "sha256": "5df3a9536cb962ea44b5ae58eec3cc014c50bd00a323346f38234f4bf323c37f",
+      "normalized_sha256": "8e034b4ee80681b2a2fbffe76be174eeb9debeba41ab6020d26f775848918f3b",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-NC",
+      "effective_date": null
+    },
+    "57": {
+      "decision": "accept",
+      "sha256": "c58f3ad59f7ce718ab2719fee5c8ea7c47d9da1af099b243fddc3e3ea8500be2",
+      "normalized_sha256": "34783e9aabad9e397360a9c056dc34d08b84fe06a694d84582638bb7bd17d0f2",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-NC",
+      "effective_date": null
+    },
+    "58": {
+      "decision": "accept",
+      "sha256": "66ee2f4630cdc4a568997c162713239da6d24cddfb6ee00499554f1e7a5c68ca",
+      "normalized_sha256": "8c0cf3b7075c205759aabbd4d07865a844aff66c1336729e841751c40f857135",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-NC",
+      "effective_date": "2025-07-01"
+    },
+    "59": {
+      "decision": "accept",
+      "sha256": "30416e2e0390dbcc1f1c3443b6f557b9b07ed704edbf0d865f5b629b3e13f88c",
+      "normalized_sha256": "18e432d7d93dfb560a9b9edffc6e01fb6221e95873bea5be96cf0227833dc060",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "US-NC",
+      "effective_date": null
+    },
+    "63": {
+      "decision": "accept",
+      "sha256": "cb97e31f4cb227d073f1e8819f45962f12e7ea15d03d1fa14287eb9b19bb83e2",
+      "normalized_sha256": "838b2ee65a292c887c464cb5510154b9e1deb506892202bbc0d03e506781ac87",
+      "note": "Accepted after title, extracted-text, and domain-relevance spot checks; not a claim-level fact audit.",
+      "jurisdiction": "International; U.S.-focused explanation",
+      "effective_date": null
+    }
+  },
+  "review_scope": "Readability, provenance, domain relevance, and representative PDF visual checks; not exhaustive transcription or insurance advice validation."
+}

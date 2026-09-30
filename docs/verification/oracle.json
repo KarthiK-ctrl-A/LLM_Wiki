@@ -1,0 +1,9 @@
+{
+  "provider": "oracle",
+  "status": "passed",
+  "checked_at": "2026-09-30T03:03:21.821500+00:00",
+  "database_version": "23.26.2.0.0",
+  "pdb": "FREEPDB1",
+  "create_insert_select_drop": true,
+  "driver": "3.4.2"
+}

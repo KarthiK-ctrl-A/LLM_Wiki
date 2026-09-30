@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.venv/
+genai/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+build/
+dist/
+data/
+llm_wiki_data/llm_wiki/data/
+*.part
