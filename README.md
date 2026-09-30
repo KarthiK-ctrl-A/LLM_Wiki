@@ -1,6 +1,6 @@
 # P&C Insurance LLM Wiki
 
-A Python foundation for a persistent, source-grounded knowledge wiki about property and casualty insurance. Current capabilities are source collection, corpus auditing, and reusable embedding/chat adapters. Wiki generation and question answering are planned, not implemented. See [manifest.md](manifest.md) for the audited status and delivery sequence.
+A Python foundation for a persistent, source-grounded knowledge wiki about property and casualty insurance. Challenge Steps Zero and One are complete: the local services and reviewed corpus are verified, and configurable filesystem wiki projects can now be created and inspected. Agent ingestion and question answering are planned. See [manifest.md](manifest.md), [Step Zero evidence](docs/step-zero.md), and [Step One usage](docs/step-one.md).
 
 ## Setup
 
@@ -8,7 +8,7 @@ Use Python 3.11 or newer from the repository root. The legacy `genai/` environme
 
 ```powershell
 py -3.11 -m venv .venv
-.venv/Scripts/python.exe -m pip install -e ".[dev]"
+.venv/Scripts/python.exe -m pip install -e ".[dev,sources,oracle]"
 Copy-Item .env.example .env
 .venv/Scripts/python.exe -m llm_wiki --help
 ```
@@ -44,11 +44,16 @@ Install only the optional integrations you need:
 # Explicit live checks, after installing the relevant extras and model.
 .venv/Scripts/python.exe -m llm_wiki smoke embeddings
 .venv/Scripts/python.exe -m llm_wiki smoke llm
+
+# Create, list, and inspect isolated wiki projects.
+.venv/Scripts/python.exe -m llm_wiki wiki create "Property & Casualty Insurance"
+.venv/Scripts/python.exe -m llm_wiki wiki list
+.venv/Scripts/python.exe -m llm_wiki wiki inspect property-casualty-insurance
 ```
 
 The installed `llm-wiki` executable provides the same commands. Exit codes: `0` success, `1` corpus issues or individual download failures, `2` configuration/provider/unexpected command errors. Legacy scripts (`embedding_consumer.py`, `test_nomic.py`, `test_ollama.py`, and `llm_wiki_data/downlaod_data.py`) now delegate to the same CLI. The `embedding_service.NomicEmbeddingService` import remains available from the repository root. Legacy downloader helper functions are replaced by the typed API below; the old script remains an executable entry point.
 
-For Ollama, install/start Ollama separately and pull the model named in `WIKI_OLLAMA_MODEL`; the default is `qwen2.5:7b`, matching the previous installation notes. Change this setting to use another installed model. For Nomic, the first embedding call downloads model weights and custom model code unless cached. Pin `WIKI_EMBEDDING_REVISION` to a reviewed commit for repeatable deployments.
+For Ollama, install/start Ollama separately and pull the model named in `WIKI_OLLAMA_MODEL`; the verified default is `gemma4:latest`. Change this setting to use another installed model. For Nomic, the first embedding call downloads model weights and custom model code unless cached. The example configuration pins both model and custom-code revisions.
 
 The [Nomic model card](https://huggingface.co/nomic-ai/nomic-embed-text-v2-moe) specifies 768-dimensional output, task prefixes, and a 512-token input limit. This adapter checks vector dimensions, finite values, and normalization; it does not yet implement long-document chunking. Do not embed full manuals and assume all text was represented. Chat access uses the official [LangChain Ollama integration](https://docs.langchain.com/oss/python/integrations/chat/ollama).
 
@@ -83,7 +88,7 @@ The audit checks presence and file signatures. It does not establish readability
 .venv/Scripts/python.exe -m pip check
 ```
 
-The tests use temporary archives and injected providers, with no model downloads, database, or external network. A GitHub Actions workflow runs the offline checks when this directory is placed in a GitHub repository. No Git repository was present during this refactor.
+The tests use temporary archives/projects and injected providers, with no model downloads, database, or external network. A GitHub Actions workflow runs the offline checks.
 
 Oracle setup is intentionally separate: [sqls/db_queries.sql](sqls/db_queries.sql) is a manual development-user bootstrap, not the application schema. Put runtime credentials in environment configuration. The refactor removes the old example password from setup files without changing any live database account.
 

@@ -6,7 +6,7 @@ Audit date: **2026-09-29**. Scope: the files under this project directory, the s
 
 Build a P&C insurance knowledge base that accumulates source-grounded, interconnected markdown knowledge, then uses Oracle retrieval and LangGraph/LangChain workflows to answer questions with traceable evidence. Initial subject areas: homeowners, auto liability, flood/NFIP, cyber, reinsurance, underwriting, and claims.
 
-**The original code reaches part of Step Zero only. No challenge step is fully verified end to end.** This refactor establishes a tested engineering foundation; it does not turn source downloading into wiki ingestion or count a model experiment as a working search system.
+**The project now completes challenge Steps Zero and One.** The environment, providers, and 52-source corpus are verified, and the configurable Markdown wiki storage layer is implemented. Agent ingestion begins in Step Two.
 
 Status meanings: **Complete** = implementation and stated acceptance evidence exist; **Partial** = some deliverables exist but the exit criteria are unmet; **Not started** = no implementation found; **Unverified** = requires runtime evidence not obtained in this audit. Checkboxes track deliverables, not percentages.
 
@@ -30,9 +30,9 @@ Corpus exceptions: missing source IDs **22, 23, 27, 28**; HTML saved under PDF n
 
 | Phase | Challenge alignment | Original state | After this refactor | Depends on |
 |---|---|---|---|---|
-| F | Engineering foundation | Loose scripts | Complete for the bounded refactor; live providers unverified | — |
-| 0 | Environment and corpus | Partial | Partial | F |
-| 1 | Wiki directories, schema, frontmatter, links, management CLI | Not started | Not started | 0 |
+| F | Engineering foundation | Loose scripts | Complete | — |
+| 0 | Environment and corpus | Partial | **Complete** | F |
+| 1 | Wiki directories, schema, frontmatter, links, management CLI | Not started | **Complete** | 0 |
 | 2 | Agent ingestion and knowledge integration | Not started | Not started | 1 |
 | 3 | Navigable index and chronological operation log | Not started | Not started | 2 |
 | 4 | Oracle page metadata, vector and full-text search | Not started | Not started | 1–3 |
@@ -58,21 +58,23 @@ Evidence: `src/llm_wiki/`, `tests/test_foundations.py`, `README.md`, `docs/archi
 
 - [x] Preserve the selected insurance domain and curated archive.
 - [x] Install and validate the lightweight package in a fresh Python 3.11 environment.
-- [ ] Install integration extras, select a model revision, and record actual Nomic and Ollama smoke results.
-- [ ] Start/verify Oracle, connect using environment credentials, and prove create/read/drop of a disposable test table.
-- [ ] Resolve or explicitly replace/exclude the four failed sources; distinguish landing pages from documents.
-- [ ] Add PDF/HTML-to-text adapters with page/section provenance. Keep originals intact; store derived text separately with source checksum, extraction version, retrieval date, and quality status.
-- [ ] Review 50–100 readable sources, with jurisdiction/effective-date metadata where available. Flag scanned or empty documents for OCR/manual attention.
+- [x] Install integration extras, pin model/code revisions, and record actual Nomic and Ollama smoke results.
+- [x] Start/verify Oracle, connect using environment credentials, and prove create/read/drop of a disposable test table.
+- [x] Resolve or explicitly exclude failed/landing-page sources; replace three landing pages with their full PDFs.
+- [x] Add PDF/HTML-to-text adapters with page/section provenance while preserving originals.
+- [x] Review 52 readable sources with hashes, quality notes, and applicable jurisdiction/effective-date metadata; flag sparse/image-only material.
 
 **Exit evidence:** live provider results, DB probe, and a corpus report linking each accepted source to readable derived text. Do not call this phase complete based only on installed dependencies.
 
-## 1 — Create the markdown storage boundary
+## 1 — Create the markdown storage boundary — Complete
 
-Implement `domain/pages.py`, `storage/markdown.py`, and `services/projects.py`. Use a stable project identifier from the first page onward, even before the Oracle project registry exists. Define entity/concept/summary/overview records, YAML serialization, timestamps, tags, and source references. Add `create`, `list`, and `inspect` commands with per-project schema settings and link resolution.
+Implemented `domain/pages.py`, `storage/markdown.py`, and `services/projects.py`. Each project receives a UUID, generated `SCHEMA.md`, its own link style and required fields, and directories for summaries, entities, concepts, topic overviews, and immutable raw sources. CLI commands create, list, and inspect projects.
 
-- [ ] Create project directories and schema conventions.
-- [ ] Round-trip page metadata and content; enforce safe project-relative paths and atomic writes.
-- [ ] Validate links and independently configurable projects.
+- [x] Create project directories and per-project schema conventions.
+- [x] Round-trip strict YAML metadata and content; enforce safe project-relative paths and atomic writes while preserving creation timestamps.
+- [x] Resolve and validate wikilinks or Markdown links, and prove independently configured projects coexist.
+
+**Evidence:** `tests/test_step_one.py` covers two schema configurations, manual directory deletion, malformed/duplicate frontmatter, raw-source preservation, path escape rejection, page-directory/type enforcement, page updates, broken/ambiguous links, and the CLI. See `docs/step-one.md`.
 
 **Exit evidence:** temporary-directory tests for two differently configured projects, malformed frontmatter, path escape rejection, page updates, and listing after project removal.
 
@@ -158,16 +160,16 @@ Choose CLI chat first to keep the delivery small; add a web client later if usef
 
 ## Recommended delivery order
 
-1. **Next change:** normalize three representative sources (one actual PDF, one HTML page, one mislabeled legacy file), preserving provenance and reporting extraction quality. Repair the corpus acceptance list and run live provider checks.
-2. **Next vertical slice:** markdown storage plus one resumable ingestion with index/log updates. Finish phases 1–3 before broad corpus ingestion.
+1. **Next change:** implement one resumable Step Two ingestion for two reviewed insurance sources, using typed LLM output and staged page changes.
+2. **Next vertical slice:** integrate summary/entity/concept/topic pages, then add deterministic index/log updates for Step Three.
 3. **Retrieval slice:** Oracle migrations, incremental indexing, and a cited single-session query. Introduce project keys now; prove full isolation in phase 6.
 4. **Usability slice:** follow-ups, saved answers, project switching, interactive lint, and CLI chat.
 5. **Release slice:** integration locks, recovery tests, evaluations, and operating documentation. Batch ingestion and richer source formats can expand afterward.
 
 ## Verification record and maintenance
 
-Local validation for this refactor: **22 offline unit tests passed**; Ruff lint and formatting checks, Python compilation, CLI help, and `pip check` passed. The corpus audit reports **63 entries / 59 present / seven issues**, as expected from the retained archive. The audit returns exit code 1 to surface those existing issues. Reproduction commands are in `README.md`.
+Local validation through Step One: **51 offline unit tests passed**; Ruff lint, Python compilation, CLI help, and `pip check` passed. Live Oracle, Nomic, Ollama, and LangGraph checks passed. The reviewed corpus contains **52 accepted sources** and reports `ready: true`. The raw archive audit still surfaces intentionally excluded historical URLs.
 
-**Not verified:** live Nomic inference, Ollama availability/model quality, Oracle connectivity/indexes, full integration dependency resolution, and remote CI. No production corpus download or ingestion was run during this refactor.
+**Not implemented:** agent ingestion, wiki index/log maintenance, Oracle vector/full-text schema, query workflows, multi-project database isolation, lint workflows, and the final interface. Remote CI status is separate from these local checks.
 
 When updating this manifest, change checkboxes only alongside implementation evidence. Record the relevant test command/result, migration or fixture, remaining limitation, and next dependency. Keep baseline observations separate from newly completed work.

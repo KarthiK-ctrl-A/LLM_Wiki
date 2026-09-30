@@ -242,7 +242,9 @@ def normalize_corpus(sources: list[Source], root: Path, output: Path, review_fil
                             "extractor": EXTRACTOR_VERSION,
                             "dependencies": dependencies,
                             "html_selector": record["html_selector"],
-                            "title": source.title, "publisher": source.publisher, "url": source.url,
+                            "title": source.title,
+                            "publisher": source.publisher,
+                            "url": source.url,
                         },
                         sort_keys=True,
                     ).encode()
